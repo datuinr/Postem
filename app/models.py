@@ -2,6 +2,10 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
 
+class PosterManager(models.Manager):
+    def get_queryset(self):
+        return super(PosterManager, self).get_queryset().filter(is_active=True)
+
 class Category (models.Model):
     name = models.CharField(max_length=225, db_index=True)
     slug = models.SlugField(max_length=225, unique=True)
@@ -22,13 +26,15 @@ class Poster(models.Model):
     slug = models.SlugField(max_length=225)
     price = models.DecimalField(max_digits=4, decimal_places=2)
     desc = models.TextField(blank=True)
-    image = models.FileField(blank=True)
+    image = models.FileField(blank=True, upload_to='media/', default='media/default.png')
     in_stock = models.BooleanField(default=True)
     is_active = models.BooleanField(default=True)
     trending = models.BooleanField(default=False)
     new_arrivals = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
+    objects=models.Manager()
+    posters = PosterManager()
 
     class Meta:
         verbose_name_plural = 'Posters'

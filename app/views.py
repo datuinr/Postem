@@ -8,8 +8,17 @@ def categories(request):
     }
 
 def index(request):
-    posters = Poster.objects.all()
+    posters = Poster.objects.filter(is_active=True)
+    # posters = Poster.objects.all
     return render(request, 'index.html', {'posters': posters})
+
+# def trending(request):
+#     poster = Poster.objects.filter(is_active=True, trending=True)
+#     return render(request, 'filter.html', {'posters': posters})
+
+# def new_arrivals(request):
+#     poster = Poster.objects.filter(is_active=True, new_arrivals=True)
+#     return render(request, 'filter.html', {'posters': posters})
 
 def about(request):
     return render(request, 'about.html')
