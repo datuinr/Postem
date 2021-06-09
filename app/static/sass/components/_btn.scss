@@ -1,0 +1,98 @@
+.btn {
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($grey-l, 0.8),
+        rgba($grey-d, 1));
+    padding: 1.5rem 8rem;
+    color: white;
+    cursor: pointer;
+    border-radius: 3px;
+
+    & a,
+    a:hover{
+        color: white;
+    }
+
+    &:hover,
+    &:focus {
+        transform: translateY(-3px);
+        box-shadow: 0 1rem 2rem rgba($black,0.2);
+
+        &::after {
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+        }
+    }
+
+    &:active {
+        transform: translateY(-1px);
+        box-shadow: 0 .5rem 1rem rgba($black,0.2);
+    }
+}
+
+.btn-small {
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($grey-l, 0.8),
+        rgba($grey-d, 1));
+    padding: 1rem 3rem;
+    color: white;
+    cursor: pointer;
+    border-radius: 3px;
+    
+    & a,
+    a:hover{
+        color: white;
+    }
+    
+    &:hover,
+    &:focus {
+        transform: translateY(-3px);
+        box-shadow: 0 1rem 2rem rgba($black,0.2);
+    
+        &::after {
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+        }
+    }
+    
+    &:active {
+        transform: translateY(-1px);
+        box-shadow: 0 .5rem 1rem rgba($black,0.2);
+    }
+
+}
+
+.btn-long {
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($grey-l, 0.8),
+        rgba($grey-d, 1));
+    padding: 1rem 3rem;
+    color: white;
+    cursor: pointer;
+    border-radius: 3px;
+    width: 100%;
+    
+    & a,
+    a:hover{
+        color: white;
+    }
+    
+    &:hover,
+    &:focus {
+        transform: translateY(-3px);
+        box-shadow: 0 1rem 2rem rgba($black,0.2);
+    
+        &::after {
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+        }
+    }
+    
+    &:active {
+        transform: translateY(-1px);
+        box-shadow: 0 .5rem 1rem rgba($black,0.2);
+    }
+
+}

@@ -1,0 +1,38 @@
+.about {
+    position: relative;
+
+    &_img {
+        background-image:  
+            linear-gradient(
+            to right bottom,
+            rgba($grey-l, 0.3), /*hex with transparency only works with sass*/
+            rgba($grey, 0.3)), 
+            url(../../static/img/pexels-4.jpeg);
+        // filter: grayscale(100%);
+        min-height: 100vh;
+        width: 100vw; 
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    &_cap{
+        color: $white;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%); /*it will be shifted half of the width of the left side*/
+        text-align: center;
+        font-weight: 900;
+    }
+
+    &_text{
+        color: $white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /*it will be shifted half of the width of the left side*/
+        text-align: center;
+    }
+}

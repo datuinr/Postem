@@ -1,0 +1,112 @@
+{% load sass_tags %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+{% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% sass_src 'sass/main.scss' %}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+        crossorigin="anonymous" />
+    <link rel="icon" type="image/png" href="../../static/img/postem favicon 16px.svg" />
+    <title>PostEm | {{ poster.title }}</title>
+</head>
+
+<body>
+    <div class="navigation">
+        <div class="logo">
+            <h2 class="logo_text"><a href="/">postem.</a></h2>
+        </div>
+        <div class="nav">
+            <ul class="nav_ul">
+                <li class="nav_li">
+                    <a href="#">Posters</a>
+                    <div class="nav_drop">
+                        <div class="nav_drop-flex">
+                            <ul class="nav_drop--list">
+                                <h4>Categories</h4>
+                                {% for c in categories %}
+                                <li class="nav_drop--item">
+                                    <a href="{{ c.get_absolute_url }}">{{ c.name|title }}</a>
+                                </li>
+                                {% endfor %}
+                                <li class="nav_drop--item">
+                                    <a href="#">View All</a>
+                                </li>
+                            </ul>
+                            <ul class="nav_drop--list">
+                                <h4>Now Trending</h4>
+                                <li class="nav_drop--item">
+                                    <a href="#">View All</a>
+                                </li>
+                            </ul>
+                            <ul class="nav_drop--list">
+                                <h4>New Arrivals</h4>
+                                <li class="nav_drop--item">
+                                    <a href="#">View All</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav_li"><a href="/about">About</a></li>
+                <li class="nav_li"><a href="/contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <main>
+        <section class="detail">
+            <div class="detail_link">
+                <a href="/">Home</a> /
+                <a href="/">Posters</a> /
+                <a href="/">{poster.title}</a> /
+            </div>
+            <div class="detail_container">
+                <div class="detail_item">
+                    <div class="detail_img">
+                        <img alt="detail-image" src="{{ poster.image.url }}">
+                    </div>
+                    <div class="detail_info">
+                        <div class="detail_links">
+                            <a href="/">Home</a> >
+                            <a href="/">Posters</a> >
+                            <a href="/">{{poster.title}}</a>
+                        </div>
+                        <h2>{{poster.title}}</h2>
+                        <p>{{poster.desc}}</p>
+                        <h3>${{poster.price}}</h3>
+                        <button class="btn-long">Add</button>
+                    </div>
+                </div>
+                {% endblock %}
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="footer_logobox">
+                <picture class="footer_logo">
+                    <img src="../../static/img/postem logo 520px.svg" alt="logo">
+                </picture>
+            </div>
+            <div class="footer_navigation">
+                <ul class="footer_list">
+                    <li class="footer_item"><a href="/about" class="footer_link">About</a></li>
+                    <li class="footer_item"><a href="/contact" class="footer_link">Contact</a></li>
+                    <li class="footer_item"><a href="#" class="footer_link">Careers</a></li>
+                    <li class="footer_item"><a href="#" class="footer_link">Privacy Policy</a></li>
+                    <li class="footer_item"><a href="#" class="footer_link">Terms</a></li>
+                </ul>
+            </div>
+        </footer>
+
+    </main>
+</body>
+
+</html>

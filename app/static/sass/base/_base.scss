@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css?family=Karla&display=swap');
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Karla, sans-serif;
+}
+
+html {
+    font-size: 93.75%;
+    scroll-behavior: smooth;
+}
+
+body {
+    box-sizing: border-box;
+    overflow-x: hidden;
+
+}
+
+a, a:link {
+    color: $grey-d;
+    text-decoration: none;
+}
+
+// a:visited{
+//     color: $grey;
+// }
+
+a:hover{
+    color: $grey-l;
+}
+
+a:active{
+    color: $grey-d;
+}
+
+::selection {
+    background-color: $grey;
+    color: $white;
+    -webkit-text-stroke: .05px $white;
+}
+
+::-webkit-scrollbar {
+    width: .75rem;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient($grey-l, $grey-d); 
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: $grey-l; 
+}
+
+

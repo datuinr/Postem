@@ -1,0 +1,86 @@
+.contact {
+    background-color: grey;
+    min-height: 100vh;
+    background-image: url(../../static/img/pexels-3.jpeg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    &_formbox {
+        min-width: 50vw;
+        margin-top: 10rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.form {
+    height: 70vh;
+    width: 80%;
+    background-color: rgba($offwhite2, .9);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &_heading {
+        color: $grey-l;
+        // text-transform: lowercase;
+        font-weight: 200;
+        padding-bottom: 3rem;
+    }
+
+    &_group:not(:last-child){
+        margin-bottom:2rem;
+        
+    }
+
+    &_input {
+        padding: .5rem 1rem;
+        border-radius: 2px;
+        border: none;
+        border-bottom: 3px solid transparent;
+        width: 500px;
+        
+        &:focus {
+            outline: none;
+            box-shadow: 0 1rem 2rem rgba($black, .1);
+            border-bottom: 3px solid $grey;
+        }
+        
+        &:focus:invalid {
+            border-bottom: 3px solid $red;
+        }
+        
+    }
+    
+    &_textarea {
+        padding: .5rem 1rem;
+        border-radius: 2px;
+        border: none;
+        border-bottom: 3px solid transparent;
+        width: 500px;
+        resize: none;
+        height: 300px;
+        padding-bottom: 80px;
+        
+        &:focus {
+            outline: none;
+            box-shadow: 0 1rem 2rem rgba($black, .1);
+            border-bottom: 3px solid $grey;
+        }
+
+        &:focus:invalid {
+            border-bottom: 3px solid $red;
+        }
+    }
+
+
+
+}

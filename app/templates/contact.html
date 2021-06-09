@@ -1,0 +1,102 @@
+{% load sass_tags %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% sass_src 'sass/main.scss' %}" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/png" href="../static/img/postem favicon 16px.svg" />
+    <title>PostEm | Contact.</title>
+</head>
+
+
+<body>
+    <div class="navigation">
+        <div class="logo">
+            <h2 class="logo_text"><a href="/">postem.</a></h2>
+        </div>
+        <div class="nav">
+            <ul class="nav_ul">
+                <li class="nav_li">
+                    <a href="#">Posters</a>
+                    <div class="nav_drop">
+                        <div class="nav_drop-flex">
+                            <ul class="nav_drop--list">
+                                <h4>Categories</h4>
+                                {% for c in categories %}
+                                <li class="nav_drop--item">
+                                    <a href="{{ c.get_absolute_url }}">{{ c.name|title }}</a>
+                                </li>
+                                {% endfor %}
+                                <li class="nav_drop--item">
+                                    <a href="#">View All</a>
+                                </li>
+                            </ul>
+                            <ul class="nav_drop--list">
+                                <h4>Now Trending</h4>
+                                <li class="nav_drop--item">
+                                    <a href="#">View All</a>
+                                </li>
+                            </ul>
+                            <ul class="nav_drop--list">
+                                <h4>New Arrivals</h4>
+                                <li class="nav_drop--item">
+                                    <a href="#">View All</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav_li"><a href="/about">About</a></li>
+                <li class="nav_li"><a href="/contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <main>
+        <section class="contact">
+            <div class="contact_formbox">
+                <form action="mailto:rldatuin@hotmail.com" enctype="multipart/form-data" method="POST" class="form">
+                    <h2 class="form_heading">
+                        We'd love to hear from you!
+                    </h2>
+                    <div class="form_group">
+                        <input type="text" class="form_input" placeholder="full name" required>
+                    </div>
+                    <div class="form_group">
+                        <input type="email" class="form_input" placeholder="email address" required>
+                    </div>
+                    <div class="form_group">
+                        <textarea class="form_textarea" cols="40" rows="5" placeholder="what's on your mind?"
+                            required></textarea>
+                    </div>
+                    <div class="form_group">
+                        <input type="submit" value="submit" class="btn-small"></input>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <footer class="footer">
+            <div class="footer_logobox">
+                <picture class="footer_logo">
+                    <img src="../static/img/postem logo 520px.svg" alt="logo">
+                </picture>
+            </div>
+            <div class="footer_navigation">
+                <ul class="footer_list">
+                    <li class="footer_item"><a href="/about" class="footer_link">About</a></li>
+                    <li class="footer_item"><a href="/contact" class="footer_link">Contact</a></li>
+                    <li class="footer_item"><a href="#" class="footer_link">Careers</a></li>
+                    <li class="footer_item"><a href="#" class="footer_link">Privacy Policy</a></li>
+                    <li class="footer_item"><a href="#" class="footer_link">Terms</a></li>
+                </ul>
+            </div>
+        </footer>
+    </main>
+</body>
+
+</html>
