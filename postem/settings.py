@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'app',
+    'cart',
     'sass_processor',
     'compressor',
     'django_sass_compiler',
